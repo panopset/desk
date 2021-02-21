@@ -1,0 +1,12 @@
+package com.panopset.compat;
+
+public class AppVersion {
+  public static final String VERS = "${version_timestamp}";
+
+  public static String getVersion() {
+    return VERS;
+  }
+
+  private AppVersion() {}
+ 
+}

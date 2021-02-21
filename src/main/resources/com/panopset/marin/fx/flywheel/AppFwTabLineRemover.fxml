@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panopset.marin.apps.fw.AppFwTabLineRemover">
+ <top>
+  <VBox>
+   <HBox>
+    <fx:include fx:id="lr_file_or_dir_select" source="/com/panopset/fxapp/PanFileOrDirSelectorFX.fxml" HBox.hgrow="ALWAYS" />
+    <Button fx:id="lr_removelines" text="Remove lines">
+     <tooltip>
+      <Tooltip text="Remove lines containing search text, from selected file, or all files recursively in selected directory." />
+     </tooltip>
+    </Button>
+   </HBox>
+   <HBox>
+    <CheckBox fx:id="lr_windows" text="Windows">
+     <tooltip>
+      <Tooltip text="Use DOS return characters." />
+     </tooltip>
+    </CheckBox>
+   </HBox>
+   <TextField fx:id="lr_caution_tf" text="USE WITH CAUTION, clicking Remove Lines is irreversible."/>
+  </VBox>
+ </top>
+   <center>
+    <ScrollPane fitToHeight="true" fitToWidth="true">
+      <TextArea fx:id="lr_search_criteria" BorderPane.alignment="CENTER">
+       <tooltip>
+        <Tooltip text="Delete lines in target file, or all files recursively in target directory, that contain text found in each line given here." />
+       </tooltip>
+      </TextArea>
+    </ScrollPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="com.panopset.marin.games.blackjack.BlackjackCountingController"
+  prefHeight="400.0" prefWidth="600.0">
+
+  <top>
+    <HBox spacing="5" fx:id="counting_config">
+      <VBox fx:id="cc_left">
+
+        <TitledPane animated="false" collapsible="false" text="Counting system">
+          <ChoiceBox fx:id="cb_counting_systems"/>
+        </TitledPane>
+
+        <TitledPane animated="false" collapsible="false" text="Positive count large bet trigger">
+          <TextField fx:id="count_positive" text="10"/>
+        </TitledPane>
+
+        <TitledPane animated="false" collapsible="false" text="Negative count bail trigger">
+          <TextField fx:id="count_negative" text="-10"/>
+        </TitledPane>
+        <Label text="Set both count triggers to 0, to turn off card counting bet adjustments."/>
+        <Label text="Counting system simulations work best with one player."/>
+        <FlowPane>
+          <Button fx:id="btn_counting_reset" text="reset">
+            <tooltip>
+              <Tooltip text="Reset to default."/>
+            </tooltip>
+          </Button>
+          <Label text="  Counting systems:"/>
+        </FlowPane>
+      </VBox>
+      <VBox fx:id="cc_right">
+        <TitledPane animated="false" collapsible="false" text="Minimum Bet">
+          <TextField fx:id="minimum_bet" text="5"/>
+        </TitledPane>
+
+        <TitledPane animated="false" collapsible="false" text="Large Bet">
+          <TextField fx:id="large_bet" text="20"/>
+        </TitledPane>
+
+        <TitledPane animated="false" collapsible="false" text="Target Stake">
+          <TextField fx:id="target_stake" text="10000"/>
+        </TitledPane>
+      </VBox>
+    </HBox>
+  </top>
+  <center>
+    <ScrollPane fitToHeight="true" fitToWidth="true">
+      <TextArea fx:id="ta_counting_systems"/>
+    </ScrollPane>
+  </center>
+</BorderPane>

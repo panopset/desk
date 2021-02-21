@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="653.0" 
+
+xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" 
+
+fx:controller="com.panopset.marin.apps.gr.GrScene">
+ <top>
+  <fx:include fx:id="panMenuBar" source="/com/panopset/fxapp/PanMenuFX.fxml" />
+ </top>
+ <center>
+  <VBox fx:id="mainbox">
+    <fx:include fx:id="grdirselect" source="/com/panopset/fxapp/PanDirSelectorFX.fxml" />
+    <TextField fx:id="fxid_regex" promptText="Regex selection (ignored if extensions selection is specified)" />
+    <TextField fx:id="fxid_fromtext" promptText="from" />
+    <TextField fx:id="fxid_totext" promptText="to" />
+    <HBox>
+      <Button mnemonicParsing="false" onAction="#handleReplaceAllAction" text="Replace all" />
+      <TextField fx:id="fxid_exts" promptText="Extensions selection (for example: txt,java)" HBox.hgrow="ALWAYS" />
+    </HBox>
+    <HBox>
+     <TitledPane animated="false" collapsible="false" text="Return Characters">
+       <HBox>
+        <fx:define>
+         <ToggleGroup fx:id="gr_crlf_tg" />
+        </fx:define>
+         <RadioButton fx:id="gr_rbDoNothing" text="Do nothing   " toggleGroup="$gr_crlf_tg"/>
+         <RadioButton fx:id="gr_rbw2u" text="Windows2UNIX   " toggleGroup="$gr_crlf_tg" />
+         <RadioButton fx:id="gr_rbu2w" text="UNIX2Windows   " toggleGroup="$gr_crlf_tg" />
+       </HBox>
+     </TitledPane>
+     <TitledPane animated="false" collapsible="false" text="Options">
+        <HBox>
+        <CheckBox fx:id="gr_recursive" text="Recursive" selected="true"/>
+        </HBox>
+     </TitledPane>
+    </HBox>
+  </VBox>
+ </center>
+</BorderPane>

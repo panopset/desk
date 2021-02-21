@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TextField?>
+<VBox spacing="5" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.panopset.marin.games.blackjack.BlackjackRulesController">
+ <HBox>
+  <VBox>
+    <CheckBox fx:id="dealer_hits_soft_17" text="Dealer hits soft 17." selected="true" />
+    <CheckBox fx:id="rspltaces" text="Resplit Aces." />
+    <CheckBox fx:id="dblaftrsplit" text="Double after split." />
+    <HBox>
+      <Label fx:id="decks" text="Decks" />
+      <Label text=":  "/>
+      <ChoiceBox fx:id="cb_decks"/>
+    </HBox>
+  </VBox>
+  <VBox>
+    <CheckBox fx:id="rule_65" text="Blackjack pays 6 to 5.">
+      <tooltip>
+      <Tooltip text="Blackjack pays 6 to 5 instead of 3 to 2"/>
+      </tooltip>
+    </CheckBox>
+    <CheckBox fx:id="rule_ls" text="Late surrender." />
+    <CheckBox fx:id="rule_vs" text="Variations." />
+    <HBox>
+      <Label fx:id="seats" text="Seats..." />
+      <Label text=":  "/>
+      <ChoiceBox fx:id="cb_seats"/>
+    </HBox>
+  </VBox>
+  <VBox>
+    <CheckBox fx:id="rule_sc" text="Show count." />
+    <CheckBox fx:id="rule_es" text="European Style.">
+      <tooltip>
+       <Tooltip text="Player always loses to dealer Blackjack, even in a push."/>
+      </tooltip>
+    </CheckBox>
+    <CheckBox fx:id="rule_fd" text="Fast deal.">
+      <tooltip>
+       <Tooltip text="Skip showing hand result and just go to the next deal.  Having this option, by the way, is the whole reason I wrote this game."/>
+      </tooltip>
+    </CheckBox>
+    <HBox>
+      <Label text="Reload "/>
+      <TextField fx:id="reload_amount" text="300">
+        <tooltip>
+          <Tooltip text="Initial stake, and reload amount, in dollars."/>
+        </tooltip>
+      </TextField>
+    </HBox>
+  </VBox>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+ </HBox>
+ <HBox>
+  <VBox>
+    <CheckBox fx:id="rule_even" text="Player is a fool who takes even money, blackjack versus ace." />
+    <CheckBox fx:id="bet_idea_dab" text="Bets*: Double after bust." />
+    <CheckBox fx:id="bet_idea_lir" text="Bets*: Let it ride after two wins." />
+    <Label text="* 'Bets' strategy simulations only work with one player."/>
+  </VBox>
+ </HBox>
+</VBox>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane prefHeight="400.0" prefWidth="600.0"
+
+ xmlns="http://javafx.com/javafx/8.0.172-ea"
+ xmlns:fx="http://javafx.com/fxml/1"
+
+ fx:controller="com.panopset.marin.apps.fw.AppFwTabHexDump">
+ <top>
+  <VBox>
+   <HBox>
+    <fx:include fx:id="hd_fileselect"
+     source="/com/panopset/fxapp/PanFileSelectorFX.fxml" HBox.hgrow="ALWAYS" />
+    <Button fx:id="hd_load" text="Load">
+     <tooltip>
+      <Tooltip text="Load bytes from selected file." />
+     </tooltip>
+    </Button>
+   </HBox>
+   <HBox>
+    <CheckBox fx:id="hd_space" text="Space  " />
+    <CheckBox fx:id="hd_chars" text="Show Character Line  " />
+    <TextField fx:id="hd_start" promptText="Start" text="0">
+     <tooltip>
+      <Tooltip text="File start position." />
+     </tooltip>
+    </TextField>
+    <TextField fx:id="hd_max" promptText="Max" text="1024">
+     <tooltip>
+      <Tooltip text="Maximum characters to dump." />
+     </tooltip>
+    </TextField>
+    <TextField fx:id="hd_width" promptText="Width" text="80">
+     <tooltip>
+      <Tooltip text="Dump width." />
+     </tooltip>
+    </TextField>
+   </HBox>
+  </VBox>
+ </top>
+ <center>
+  <SplitPane fx:id="hd_sp" BorderPane.alignment="CENTER">
+   <ScrollPane fitToHeight="true" fitToWidth="true">
+    <TextArea fx:id="hd_text" promptText="Text" />
+   </ScrollPane>
+   <ScrollPane fitToHeight="true" fitToWidth="true">
+    <TextArea fx:id="hd_dump" editable="false"
+     promptText="Hexadecimal" />
+   </ScrollPane>
+  </SplitPane>
+ </center>
+</BorderPane>

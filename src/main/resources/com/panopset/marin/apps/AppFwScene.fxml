@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane prefHeight="400.0" prefWidth="653.0"
+
+            xmlns="http://javafx.com/javafx/8.0.172-ea"
+            xmlns:fx="http://javafx.com/fxml/1"
+
+            fx:controller="com.panopset.marin.apps.fw.FwMainScene">
+ <top>
+  <fx:include fx:id="panMenuBar" source="/com/panopset/fxapp/PanMenuFX.fxml" />
+ </top>
+ <center>
+       <TabPane fx:id="fw_tp" tabClosingPolicy="UNAVAILABLE">
+         <Tab fx:id="tab_flywheel" text="Flywheel">
+           <fx:include fx:id="appFwTabFw" source="/com/panopset/marin/fx/flywheel/AppFwTabFw.fxml" />
+         </Tab>
+         <Tab fx:id="tab_hexdump" text="Hex Dump">
+           <fx:include fx:id="appFwTabHexDump" source="/com/panopset/marin/fx/flywheel/AppFwTabHexDump.fxml" />
+         </Tab>
+         <Tab fx:id="tab_stract" text="Stract">
+           <fx:include fx:id="appFwTabStract" source="/com/panopset/marin/fx/flywheel/AppFwTabStract.fxml" />
+         </Tab>
+         <Tab fx:id="tab_lineremover" text="Line Remover">
+           <fx:include fx:id="appFwTabLineRemover" source="/com/panopset/marin/fx/flywheel/AppFwTabLineRemover.fxml" />
+         </Tab>
+       </TabPane>
+ </center>
+</BorderPane>

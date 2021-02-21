@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="com.panopset.marin.games.blackjack.BlackjackConfigController"
+  prefHeight="400.0" prefWidth="600.0">
+  <center>
+    <TabPane fx:id="bctabrules" tabClosingPolicy="UNAVAILABLE">
+      <Tab fx:id="rules" text="Rules">
+        <fx:include fx:id="blackjackRules" source="BlackjackRules.fxml"/>
+      </Tab>
+      <Tab fx:id="tab_counting" text="Counting">
+        <fx:include fx:id="blackjackCounting" source="BlackjackCounting.fxml"/>
+      </Tab>
+      <Tab fx:id="tab_basic" text="Basic Strategy">
+        <fx:include fx:id="blackjackBasic" source="BlackjackBasic.fxml"/>
+      </Tab>
+    </TabPane>
+  </center>
+</BorderPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.canvas.Canvas?>
+<BorderPane xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="com.panopset.marin.games.blackjack.BlackjackGameController">
+
+  <center>
+    <HBox>
+      <Canvas fx:id="felt"/>
+    </HBox>
+  </center>
+
+  <bottom>
+    <FlowPane fx:id="gameControlFlow"/>
+  </bottom>
+</BorderPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="com.panopset.marin.cs.ChecksumScene"
+  prefHeight="400.0" prefWidth="600.0">
+
+  <top>
+    <fx:include fx:id="panMenuBar" source="/com/panopset/fxapp/PanMenuFX.fxml"/>
+  </top>
+
+  <center>
+    <BorderPane>
+      <top>
+        <VBox>
+          <HBox>
+            <Button fx:id="cs_checksum" text="Checksum"/>
+            <Button fx:id="cs_all" text="All"/>
+            <fx:include fx:id="cs_fileselect"
+              source="/com/panopset/fxapp/PanFileOrDirSelectorFX.fxml" HBox.hgrow="ALWAYS"/>
+          </HBox>
+          <HBox fx:id="cs_checkboxes">
+          </HBox>
+        </VBox>
+      </top>
+      <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+          <TextArea fx:id="cs_out"/>
+        </ScrollPane>
+      </center>
+    </BorderPane>
+  </center>
+</BorderPane>

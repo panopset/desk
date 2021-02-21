@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="653.0"
+
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+
+            fx:controller="com.panopset.marin.apps.lc.LcScene">
+
+ <top>
+  <fx:include fx:id="panMenuBar" source="/com/panopset/fxapp/PanMenuFX.fxml"/>
+ </top>
+
+ <center>
+  <BorderPane>
+   <top>
+    <HBox>
+     <fx:include fx:id="lc_file_or_dir_select"
+      source="/com/panopset/fxapp/PanFileOrDirSelectorFX.fxml" HBox.hgrow="ALWAYS" />
+     <CheckBox fx:id="lc_details" onAction="#handleDetailsCBAction" text="details">
+      <tooltip>
+       <Tooltip text=" Include details  " />
+      </tooltip>
+     </CheckBox>
+     <Button fx:id="lc_report" mnemonicParsing="false" onAction="#handleReportAction"
+      text="Report">
+      <tooltip>
+       <Tooltip text="Generate report" />
+      </tooltip>
+     </Button>
+    </HBox>
+   </top>
+   <center>
+    <ScrollPane fitToHeight="true" fitToWidth="true">
+     <TextArea fx:id="lc_out"
+      promptText="Click Report button after selecting jar file or class directory." />
+    </ScrollPane>
+   </center>
+  </BorderPane>
+ </center>
+
+</BorderPane>
+
