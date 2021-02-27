@@ -15,7 +15,7 @@ public class Fw extends PanopsetBrandedApp {
 
   @Override
   public String getDescription() {
-    return "Text processing utilities (flywheel, hexdump, etc.)";
+    return "Text processing utilities (flywheel, hexdump, global replace, list audit.)";
   }
 
   @Override

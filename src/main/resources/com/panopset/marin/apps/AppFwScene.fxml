@@ -16,6 +16,12 @@
          <Tab fx:id="tab_flywheel" text="Flywheel">
            <fx:include fx:id="appFwTabFw" source="/com/panopset/marin/fx/flywheel/AppFwTabFw.fxml" />
          </Tab>
+         <Tab fx:id="tab_gr" text="Global Replace">
+           <fx:include fx:id="appFwTabHexDump" source="/com/panopset/marin/fx/flywheel/AppFwTabGlobalReplace.fxml" />
+         </Tab>
+         <Tab fx:id="tab_la" text="List Audit">
+           <fx:include fx:id="appFwTabListAudit" source="/com/panopset/marin/fx/flywheel/AppFwTabListAudit.fxml" />
+         </Tab>
          <Tab fx:id="tab_hexdump" text="Hex Dump">
            <fx:include fx:id="appFwTabHexDump" source="/com/panopset/marin/fx/flywheel/AppFwTabHexDump.fxml" />
          </Tab>

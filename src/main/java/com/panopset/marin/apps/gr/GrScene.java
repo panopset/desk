@@ -17,12 +17,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-/**
- * 
- * AppGrScene.fxml controller.
- *
- */
-public class GrScene implements Initializable {
+ public class GrScene implements Initializable {
   @Override
   public void initialize(URL location, ResourceBundle resources) {
     if (!gr_rbDoNothing.isSelected() && !gr_rbw2u.isSelected() && !gr_rbu2w.isSelected()) {
@@ -41,7 +36,7 @@ public class GrScene implements Initializable {
     }
     GlobalReplaceProcessor te = new GlobalReplaceProcessor();
     try {
-      te.process(PanDirSelectorFX.INSTANCE.getDirectory(), fxid_fromtext.getText(),
+      te.process(grdirselectController.getDirectory(), fxid_fromtext.getText(),
 
           fxid_totext.getText(), fxid_exts.getText(), fxid_regex.getText(), gr_recursive.isSelected());
     } catch (IOException e) {
@@ -75,6 +70,12 @@ public class GrScene implements Initializable {
 
   @FXML
   HBox grdirselect;
+  
+  @FXML
+  PanDirSelectorFX grdirselectController;
+  
+  @FXML
+  PanDirSelectorFX grdirslct;
 
   @FXML
   TextField fxid_regex;

@@ -13,7 +13,16 @@ public class FwMainScene {
   Tab tab_flywheel;
   
   @FXML
+  Tab tab_gr;
+  
+  @FXML
+  Tab tab_la;
+  
+  @FXML
   Tab tab_hexdump;
+  
+  @FXML
+  Tab tab_stract;
   
   @FXML
   Tab tab_tail;
